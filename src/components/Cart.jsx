@@ -1,9 +1,8 @@
-import Card  from "react-bootstrap/Card";
+import Card from "react-bootstrap/Card";
 import { useState } from "react";
 import { pizzaCart } from "../utils/pizzas.js";
 import MyButton from "./Button.jsx";
 import conversor from "../utils/conversor.js";
-
 
 const Cart = () => {
   // Set states to track price and selected items (already selected within the imported js file)
@@ -16,7 +15,7 @@ const Cart = () => {
 
   //set a Function to recalculate every time the Cart array is modified (+ 1 pizza, -1 pizza )
   const calculatePizzaAmt = (cart) => {
-   return cart.reduce((sum, pizza) => sum + pizza.price * pizza.count, 0);
+    return cart.reduce((sum, pizza) => sum + pizza.price * pizza.count, 0);
   };
 
   //button mehtods:
@@ -32,7 +31,7 @@ const Cart = () => {
     //recalculate price with the list already updated
     setTotal(calculatePizzaAmt(updatedListAdd));
 
-        console.log('plus1')
+    console.log("plus1");
   };
 
   // in case of substraction (an additional filter is used to exclude pizzas with count = 0)
@@ -48,53 +47,57 @@ const Cart = () => {
     //recalculate price with the list already updated
     setTotal(calculatePizzaAmt(updatedListLess));
 
-    console.log('minus 1')
+    console.log("minus 1");
   };
 
-/*   console.log(pizzaInCart);
+  /*   console.log(pizzaInCart);
   console.log(total); */
   return (
     <>
-      <div className="container-fluid d-flex">
-        <Card className="mx-auto p-3 m-3">
+      <div className="container-fluid d-flex align-items-center">
+        <Card className="mx-auto m-3">
+          {pizzaInCart.map((pizza) => {
+            return (
+              <div className="row fw-bolder m-3" key={pizza.id}>
+                <div className="col-3">
+                  <img
+                    className="rounded w-100"
+                    src={pizza.img}
+                    alt={pizza.desc}
+                  />
+                </div>
 
-            {
-            
-            pizzaInCart.map((pizza) => {
-                return(
-                    <div className="row p-2 fw-bolder" key={pizza.id}>
+                <div className="col-6 d-flex justify-content-evenly align-items-center p-3 ">
+                  <p className=" text-capitalize ">{pizza.name}</p>
+                  <p>{conversor(pizza.price)}</p>
+                </div>
 
-                        <div className="col-2">
-                            <img className='image-cart rounded w-100' src={pizza.img} alt={pizza.desc} />
-                        </div>
-
-                       
-                    <div className="col d-flex justify-content-evenly align-items-center p-3 ">                 
-                    <p className=" col-3 text-capitalize ">{pizza.name}</p>
-                    <p>{conversor(pizza.price)}</p>
-                        </div>
-                       
-
-
-                        <div className="d-flex justify-content-evenly align-items-center gap-3 col-3 mx-auto">
-                              <MyButton btnColor='primary' btnText='-' onClick={()=>{subsHandler(pizza.id)}}/>
-                             <p>{pizza.count}</p>
-                            <MyButton btnColor='danger' btnText='+' onClick={()=>{addHandler(pizza.id)}}/>
-                           
-                          
-                        </div>
-                    </div>
-                )
-            })
-            
-            }
-
-            <div className="text-center">
-                <h3>Total</h3>
-                <p>{conversor(total)}</p>
-                <MyButton btnColor='dark'btnText='Pagar'/>
-            </div>
-
+                <div className="d-flex justify-content-evenly align-items-center gap-2 col-3 mx-auto">
+                  <MyButton
+                    btnColor="primary"
+                    btnText="-"
+                    onClick={() => {
+                      subsHandler(pizza.id);
+                    }}
+                  />
+                  <p className="my-3">{pizza.count} </p>
+                  <MyButton
+                    btnColor="danger"
+                    btnText="+"
+                    onClick={() => {
+                      addHandler(pizza.id);
+                    }}
+                  />
+                </div>
+              </div>
+            );
+          })}
+          <hr className="m-4" />
+          <div className="text-center m-3">
+            <h3>Total</h3>
+            <p>{conversor(total)}</p>
+            <MyButton btnColor="dark" btnText="Pagar" />
+          </div>
         </Card>
       </div>
     </>
