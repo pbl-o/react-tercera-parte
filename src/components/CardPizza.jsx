@@ -2,6 +2,7 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import MyButton from "./Button.jsx";
 import conversor from "../utils/conversor.js";
+import Accordion from "react-bootstrap/Accordion";
 
 const CardPizza = ({ name, img, price, ingredients, description }) => {
   return (
@@ -16,7 +17,7 @@ const CardPizza = ({ name, img, price, ingredients, description }) => {
             <ListGroup.Item>
               <Accordion defaultActiveKey="1">
                 <Accordion.Item eventKey="0">
-                  <Accordion.Header>Detalle</Accordion.Header>
+                  <Accordion.Header>🍕Detalle</Accordion.Header>
                   <Accordion.Body>{description}</Accordion.Body>
                 </Accordion.Item>
               </Accordion>
@@ -24,7 +25,11 @@ const CardPizza = ({ name, img, price, ingredients, description }) => {
 
             <ListGroup.Item>
               <Card.Text className="fw-bolder">Ingredientes</Card.Text>
-              <Card.Text>{ingredients}</Card.Text>
+              
+                <ul className=" list-group fw-bolder text-start text-capitalize ">
+                  {ingredients}
+                </ul>
+              
             </ListGroup.Item>
             <ListGroup.Item>
               <Card.Text className="fw-bolder">{conversor(price)}</Card.Text>
