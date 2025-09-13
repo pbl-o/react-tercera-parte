@@ -25,11 +25,10 @@ const CardPizza = ({ name, img, price, ingredients, description }) => {
 
             <ListGroup.Item>
               <Card.Text className="fw-bolder">Ingredientes</Card.Text>
-              
-                <ul className=" list-group fw-bolder text-start text-capitalize ">
-                  {ingredients}
-                </ul>
-              
+
+              <ul className=" list-group fw-bolder text-start text-capitalize ">
+                {ingredients}
+              </ul>
             </ListGroup.Item>
             <ListGroup.Item>
               <Card.Text className="fw-bolder">{conversor(price)}</Card.Text>
