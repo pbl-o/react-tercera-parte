@@ -11,13 +11,13 @@ const CardPizza = ({ name, img, price, ingredients, description }) => {
         <Card className="text-center">
           <Card.Img variant="top" src={img} className="" />
           <Card.Body>
-            <Card.Title>{name}</Card.Title>
+            <Card.Title className="text-capitalize">{name}</Card.Title>
           </Card.Body>
           <ListGroup className="list-group-flush">
             <ListGroup.Item>
               <Accordion defaultActiveKey="1">
                 <Accordion.Item eventKey="0">
-                  <Accordion.Header>🍕Detalle</Accordion.Header>
+                  <Accordion.Header>🍕 Descripción</Accordion.Header>
                   <Accordion.Body>{description}</Accordion.Body>
                 </Accordion.Item>
               </Accordion>

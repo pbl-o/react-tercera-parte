@@ -22,7 +22,7 @@ Para el Login, el email "almacenado" es: 'email' y la contraseña: 'thepassword'
  */
 
 function App() {
-  let visible = "cart";
+  let visible = "login";
 
   return (
     <>
