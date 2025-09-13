@@ -5,10 +5,11 @@ import Home from "./components/Home.jsx";
 import Footer from "./components/Footer.jsx";
 import Register from "./components/Register.jsx";
 import Login from "./components/Login.jsx";
+import Cart from "./components/Cart.jsx";
 
 /* 
 
-Como no está indicado en las instrucciones el conectar los botones con las secciones de la app, coloqué temporariamente un "selector" para facilitar el observar los contenidos requeridos de forma aislada.
+Como aún no está indicado en las instrucciones el conectar los botones con las secciones de la app, coloqué temporariamente un "selector" para facilitar el observar los contenidos requeridos de forma aislada.
   
 //Soluciones provisorias: 
 
@@ -21,7 +22,7 @@ Para el Login, el email "almacenado" es: 'email' y la contraseña: 'thepassword'
  */
 
 function App() {
-  let visible = "register";
+  let visible = "cart";
 
   return (
     <>
@@ -29,6 +30,7 @@ function App() {
       {visible === "home" && <Home />}
       {visible === "register" && <Register />}
       {visible === "login" && <Login />}
+      {visible === "cart" && <Cart />}
       <Footer />
     </>
   );
