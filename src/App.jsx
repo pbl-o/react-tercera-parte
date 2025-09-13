@@ -14,7 +14,7 @@ Como aún no está indicado en las instrucciones el conectar los botones con las
 //Soluciones provisorias: 
 
 App.jsx  
-Cambiar el contenido de visible a 'home' para visualizar al componente home, 'register' para visualizar al componente register y 'login' para el componente login.
+Cambiar el contenido de visible a 'home' para visualizar al componente home, 'register' para visualizar al componente register, 'login' para el componente login 'cart' para el carrito de compra .
 
 Login.jsx
 Para el Login, el email "almacenado" es: 'email' y la contraseña: 'thepassword'

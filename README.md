@@ -1,10 +1,8 @@
-Pizzería (tercera parte)
+Pizzería (Tercera parte)
 
 Pablo Díaz
 
-La segunda etapa consiste en las siguientes implementaciones:
-
-Crear y controlar estados y eventos, puntualmente, aquellos relacionados con los formularios de registro y login de una aplicación.
+La tercera etapa consiste en implementar la renderización dinámica de componentes en la aplicación web, puntualmente la galería del home y un carrito de compra.
 
 -Instrucciones relativas a particularidades de esta etapa del proyecto, se encuentran comentadas en App.jsx
 
