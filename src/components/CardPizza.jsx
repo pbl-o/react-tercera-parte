@@ -3,7 +3,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import MyButton from "./Button.jsx";
 import conversor from "../utils/conversor.js";
 
-const CardPizza = ({ name, img, price, ingredients }) => {
+const CardPizza = ({ name, img, price, ingredients, description }) => {
   return (
     <>
       <div className="col">
@@ -13,6 +13,15 @@ const CardPizza = ({ name, img, price, ingredients }) => {
             <Card.Title>{name}</Card.Title>
           </Card.Body>
           <ListGroup className="list-group-flush">
+            <ListGroup.Item>
+              <Accordion defaultActiveKey="1">
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header>Detalle</Accordion.Header>
+                  <Accordion.Body>{description}</Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </ListGroup.Item>
+
             <ListGroup.Item>
               <Card.Text className="fw-bolder">Ingredientes</Card.Text>
               <Card.Text>{ingredients}</Card.Text>
