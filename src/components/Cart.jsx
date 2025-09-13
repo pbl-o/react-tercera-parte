@@ -56,27 +56,27 @@ const Cart = () => {
   return (
     <>
       <div className="container-fluid d-flex">
-        <Card className="row mx-auto">
+        <Card className="mx-auto p-3 m-3">
 
             {
             
             pizzaInCart.map((pizza) => {
                 return(
-                    <div className="col d-flex justify-content-around align-items-center gap-5" key={pizza.id}>
-                        <div className="py- d-flex gap-3 fs-5 fw-bolder">
-                            <img style={{ width: "20%",  borderRadius: "5px" }} src={pizza.img} alt={pizza.desc} />
-                          <p className="text-capitalize bg-success">{pizza.name}</p>
+                    <div className="row p-2 fw-bolder" key={pizza.id}>
+
+                        <div className="col-2">
+                            <img className='image-cart rounded w-100' src={pizza.img} alt={pizza.desc} />
                         </div>
 
                        
-
+                    <div className="col d-flex justify-content-evenly align-items-center p-3 ">                 
+                    <p className=" col-3 text-capitalize ">{pizza.name}</p>
+                    <p>{conversor(pizza.price)}</p>
+                        </div>
                        
-                       
-                        <p>{conversor(pizza.price)}</p>
-                       
 
 
-                        <div className="d-flex gap-5 mx-auto">
+                        <div className="d-flex justify-content-evenly align-items-center gap-3 col-3 mx-auto">
                               <MyButton btnColor='primary' btnText='-' onClick={()=>{subsHandler(pizza.id)}}/>
                              <p>{pizza.count}</p>
                             <MyButton btnColor='danger' btnText='+' onClick={()=>{addHandler(pizza.id)}}/>
